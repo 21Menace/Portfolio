@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suleiman | Software Engineer</title>
+    
+    <!-- Tailwind CSS via CDN for rapid prototyping -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP for Advanced Animations (Preloader) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enables toggling dark mode manually via a CSS class on the HTML tag
+        theme: {
+          extend: {
+            colors: {
+              // Custom Color Palette
+              // Mapping 'neon' colors to specific hex codes. 
+              // We use a "Hacker Green" (#00FF41) as the primary accent.
+              neon: {
+                blue: '#00FF41',   // Mapped to Green to ensure no purple remains (fallback)
+                green: '#00FF41',  // The main Terminal Green color
+                dark: '#050505',   // Deep Black for high contrast backgrounds
+              },
+              // Overriding the default 'slate' palette to a true Monochrome/Zinc scale
+              // This ensures the "Light Mode" is clean white/gray and "Dark Mode" is deep black.
+              slate: {
+                950: '#000000', // True Black
+                900: '#09090b', // Zinc 950
+                800: '#18181b', // Zinc 900
+                700: '#27272a', // Zinc 800
+                600: '#52525b', // Zinc 600
+                500: '#71717a',
+                400: '#a1a1aa', // Zinc 400
+                300: '#d4d4d8', // Zinc 300
+                200: '#e4e4e7', // Zinc 200
+                100: '#f4f4f5', // Zinc 100
+                50:  '#ffffff', // True White
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],      // Main body font
+              mono: ['Fira Code', 'monospace'],   // Code font for snippets and logo
+            },
+            // Custom Animations
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Global Body Styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+        overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+      }
+      
+      /* Dark Mode Overrides */
+      .dark body {
+        background-color: #000000;
+        color: #ffffff;
+      }
+      
+      /* Custom Scrollbar Styling (Webkit browsers) */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4d4d8; 
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #27272a; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a1a1aa; 
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #00FF41; /* Green hover state in dark mode */
+      }
+    </style>
+    
+    <!-- Import Map for React and Framer Motion -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
+      }
+    }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
